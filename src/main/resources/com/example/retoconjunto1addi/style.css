@@ -14,3 +14,16 @@
     -fx-border-style: solid;
 }
 
+.vbox{
+    -fx-background-image: url("Img/fondoim.jpg");
+    -fx-background-size: 10px 10px 10px 10px;
+}
+
+.btnstyle{
+    -fx-background-radius: 55px;
+
+}
+.tabla{
+    -fx-alignment: center;
+    
+}

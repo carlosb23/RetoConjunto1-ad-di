@@ -2,6 +2,7 @@ package com.example.retoconjunto1addi.Pedido;
 
 import com.example.retoconjunto1addi.Items.Item;
 import lombok.Data;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.ArrayList;

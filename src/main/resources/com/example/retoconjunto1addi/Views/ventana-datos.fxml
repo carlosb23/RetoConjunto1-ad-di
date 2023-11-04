@@ -4,9 +4,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="204.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retoconjunto1addi.Controllers.VentanaDatosController">
+<BorderPane prefHeight="207.0" prefWidth="826.0" styleClass="vbox" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retoconjunto1addi.Controllers.VentanaDatosController">
    <center>
       <TableView fx:id="tabledato" prefHeight="159.0" prefWidth="536.0" BorderPane.alignment="CENTER">
         <columns>
@@ -21,10 +24,20 @@
       </TableView>
    </center>
    <top>
-      <Button fx:id="volver" alignment="CENTER" mnemonicParsing="false" onAction="#btnvolverVP" prefHeight="25.0" prefWidth="74.0" text="Volver" BorderPane.alignment="CENTER">
+      <Button fx:id="volver" alignment="CENTER" mnemonicParsing="false" onAction="#btnvolverVP" prefHeight="34.0" prefWidth="123.0" styleClass="btnstyle" stylesheets="@../style.css" text="Volver" textFill="#111111" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="700.0" top="10.0" />
          </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/user.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </top>
 </BorderPane>

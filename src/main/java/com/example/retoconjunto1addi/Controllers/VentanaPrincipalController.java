@@ -9,6 +9,7 @@ import com.example.retoconjunto1addi.Productos.ProductoDAO;
 import com.example.retoconjunto1addi.SesionData;
 import com.example.retoconjunto1addi.Usuario.Usuario;
 import com.example.retoconjunto1addi.Usuario.UsuarioDAOImp;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -98,17 +99,35 @@ public class VentanaPrincipalController implements Initializable {
         });
     }
 
+
     /**
-     * Selecciona un pedido en la tabla y almacena la información del pedido seleccionado
-     * en la sesión de datos para su posterior visualización en la ventana de detalles.
+     * Muestra los detalles de un pedido seleccionado y, después de un cierto tiempo, vuelve a la ventana principal.
      *
-     * @param p El pedido seleccionado en la tabla.
+     * @param pedido El pedido seleccionado para mostrar detalles.
      */
-    private void seleccionarPedido(Pedido p) {
-        SesionData.setPedido(p);
+    private void seleccionarPedido(Pedido pedido) {
+        SesionData.setPedido(pedido);
         SesionData.setPos(tablaproduct.getSelectionModel().getSelectedIndex());
         App.ventanaDatos("Views/ventana-datos.fxml");
         App.myStage.setTitle("Ventana Detalles");
+
+        // Establecer el tiempo de visualización en milisegundos
+        int segundos = 10000;
+
+        // Iniciar un hilo para el retraso
+        Thread retraso = new Thread(() -> {
+            try {
+                Thread.sleep(segundos);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // Volver a la ventana principal después del retraso
+            Platform.runLater(() -> {
+                App.ventanaDatos("Views/ventanaPrincipal.fxml");
+            });
+        });
+        retraso.start();
     }
 
     /**
