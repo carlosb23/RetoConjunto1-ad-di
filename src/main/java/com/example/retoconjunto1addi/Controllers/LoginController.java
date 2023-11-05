@@ -6,14 +6,13 @@ import com.example.retoconjunto1addi.Usuario.UsuarioDAO;
 import com.example.retoconjunto1addi.Usuario.UsuarioDAOImp;
 import com.example.retoconjunto1addi.DBConnection;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,6 +29,8 @@ public class LoginController implements Initializable {
     private Button btnacceder;
     @FXML
     private Label info;
+    @FXML
+    private Label olvicontra;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -77,5 +78,21 @@ public class LoginController implements Initializable {
             txtUser.setText("");
             txtPassword.setText("");
         }
+    }
+
+    /**
+     * Muestra información de recuperación de contraseñas para usuarios.
+     * Al hacer clic en el botón "¿Olvidaste tu contraseña?", se mostrará un cuadro de diálogo con información
+     * para recuperar contraseñas de usuarios, incluyendo los nombres de usuario y contraseñas asociados.
+     *
+     * @param event El evento de clic en el botón "¿Olvidaste tu contraseña?".
+     */
+    @FXML
+    public void clickolvidar(Event event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Usuarios");
+        alert.setContentText("Usuario1: Carlos, Contraseña: 1234\n" +
+                "Usuario2: Leo, Contraseña: 1234");
+        alert.showAndWait();
     }
 }

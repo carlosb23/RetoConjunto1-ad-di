@@ -56,13 +56,18 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Label fx:id="info" prefHeight="37.0" prefWidth="162.0" textAlignment="CENTER" textFill="WHITE">
+         <Label fx:id="info" alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="162.0" textAlignment="CENTER" textFill="WHITE">
             <font>
                <Font size="18.0" />
             </font>
             <VBox.margin>
-               <Insets top="40.0" />
+               <Insets bottom="10.0" top="40.0" />
             </VBox.margin>
+         </Label>
+         <Label fx:id="olvicontra" onMouseClicked="#clickolvidar" text="Has olvidado tu contraseña" textAlignment="CENTER" textFill="#00b8f5" underline="true">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Label>
          <BorderPane.margin>
             <Insets />

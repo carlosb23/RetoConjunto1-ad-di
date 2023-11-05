@@ -39,7 +39,7 @@ public class VentanaDatosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Mapeo de columnas en la tabla.
+        //aqui se llama a la tabla cada campo con su correspondiente celda
         columid.setCellValueFactory((fila) -> {
             String id = String.valueOf(fila.getValue().getId());
             return new SimpleStringProperty(id);
@@ -60,7 +60,7 @@ public class VentanaDatosController implements Initializable {
             return new SimpleStringProperty(cProducto);
         });
 
-        // Se crea el observable y se llena la tabla con cada ítem.
+        //Aqui es donde se llena la tabla con cada item usando observablelist
         observableListItem = FXCollections.observableArrayList();
         ItemDAOImp itemDAOImp = new ItemDAOImp(DBConnection.getConnection());
         SesionData.setItems(itemDAOImp.loadAll(SesionData.getPedido().getCodigo()));
